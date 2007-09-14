@@ -1,0 +1,10 @@
+--- apr_memcache-0.7.0.orig/configure.ac	2007-09-08 00:23:59.745526284 +0200
++++ apr_memcache-0.7.0/configure.ac	2007-09-08 00:24:10.042183838 +0200
+@@ -9,6 +9,7 @@
+ AM_CONFIG_HEADER([include/apr_memcache_config.h:config.in])
+ 
+ AC_PROG_CC
++AC_PROG_LIBTOOL
+ AC_PROG_LD
+ AC_PROG_INSTALL
+ 
