@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Klient memcached
 Name:		apr_memcache
 Version:	0.7.0
 Release:	1
-License:	Apache
+License:	Apache 2.0
 Group:		Libraries
 Source0:	http://www.outoforder.cc/downloads/apr_memcache/%{name}-%{version}.tar.bz2
 # Source0-md5:	1d62fea9253d17d304cfe9b26813ef4c
@@ -11,7 +11,7 @@ Patch0:		%{name}-libtool.patch
 URL:		http://www.outoforder.cc/projects/libs/apr_memcache/
 BuildRequires:	apr-devel >= 1:1.2.2
 BuildRequires:	apr-util-devel >= 1:1.2.2
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,6 +32,8 @@ Summary:	Development files for apr_memcache
 Summary(pl.UTF-8):	Pliki nagłówkowe apr_memcache
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	apr-devel >= 1:1.2.2
+Requires:	apr-util-devel >= 1:1.2.2
 
 %description devel
 Header files for apr_memcache.
@@ -84,14 +86,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE NOTICE test
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/libapr_memcache.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libapr_memcache.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libapr_memcache.so
+%{_libdir}/libapr_memcache.la
 %{_includedir}/apr_memcache-0
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libapr_memcache.a
