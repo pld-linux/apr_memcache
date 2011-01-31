@@ -2,7 +2,7 @@ Summary:	A client for memcached
 Summary(pl.UTF-8):	Klient memcached
 Name:		apr_memcache
 Version:	0.7.0
-Release:	2
+Release:	3
 License:	Apache v2.0
 Group:		Libraries
 Source0:	http://www.outoforder.cc/downloads/apr_memcache/%{name}-%{version}.tar.bz2
